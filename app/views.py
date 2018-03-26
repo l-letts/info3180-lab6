@@ -17,6 +17,8 @@ from flask import render_template, request, redirect, url_for, flash
 def index():
     """Render the initial webpage and then let VueJS take control."""
     return app.send_static_file('index.html')
+    
+
 
 
 ###
