@@ -51,7 +51,7 @@ search term here" />
     ,
     created: function() {
         let self = this;
-        fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=cd48b317059c494f9454123c900ca9af')
+        fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=')
           .then(function(response) {
             return response.json();
           })
@@ -83,6 +83,7 @@ search term here" />
     
 });
 
+
 Vue.component('app-footer', {
     template: `
         <footer>
@@ -98,10 +99,7 @@ Vue.component('app-footer', {
     }
 })
 
-const app = new Vue({
-  el: '#app',
-  router
-})
+
 
 const Home = Vue.component('home', {
    template: `
@@ -115,6 +113,8 @@ const Home = Vue.component('home', {
        }
 } });
 
+
+
 const router = new VueRouter({
   mode: 'history',
   routes: [
@@ -122,3 +122,9 @@ const router = new VueRouter({
       { path: '/news', component: NewsList }
   ]
 });
+
+const app = new Vue({
+  el: '#app',
+  router
+})
+
